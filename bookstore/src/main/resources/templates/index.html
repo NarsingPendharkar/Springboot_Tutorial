@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>BookStore</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content {
+            flex: 1;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+        }
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">BookStore</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="/books">Books</a></li>
+            <li class="nav-item"><a class="nav-link" href="/sell-books">Sell Books</a></li>
+            <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container text-center mt-5 content">
+    <h1 class="display-4">Welcome to <span class="text-primary">BookStore</span></h1>
+    <p class="lead">Your one-stop destination for managing books and sales.</p>
+    <img src="https://cdn.pixabay.com/photo/2014/09/05/18/32/old-books-436498_1280.jpg" class="img-fluid rounded mt-4 shadow-lg" alt="Bookstore Image">
+    <div class="mt-4">
+        <a href="/auth?action=login" class="btn btn-primary btn-lg mx-2">Login</a>
+        <a href="/auth?action=register" class="btn btn-secondary btn-lg mx-2">Register</a>
+    </div>
+</div>
+
+<footer class="text-center mt-5 p-3">
+    <div>
+        <p class="mb-0">© 2024 <strong>BookStore</strong>. Built with ❤️ using <a href="https://spring.io/projects/spring-boot" target="_blank">Spring Boot</a> and <a href="https://thymeleaf.org" target="_blank">Thymeleaf</a>.</p>
+        <p class="mb-0">Connect with us: 
+            <a href="#" class="ml-2">Facebook</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">Instagram</a>
+        </p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
