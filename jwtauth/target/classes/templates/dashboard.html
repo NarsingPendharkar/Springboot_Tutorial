@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome | MedCare</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+			background-image: url(welcome.jpg);
+        }
+        .navbar {
+            background: #16a085;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar .links a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .navbar .links a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            flex: 1;
+            padding: 30px;
+            text-align: center;
+        }
+        .container h2 {
+            font-size: 28px;
+            color: #16a085;
+        }
+        .container p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .footer {
+            background: #16a085;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">MedCare</div>
+        <div class="links" th:if="${role=='USER'}">
+            <a href="/profile">Profile</a>
+            <a href="/logout">Logout</a>
+        </div>
+		
+		<div  class="links"   th:if="${role == 'ADMIN'}">
+			
+			<a href="/register">Add User</a>
+			<a href="/profile">Profile</a>
+			<a href="/logout">Logout</a>
+		</div>
+
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h2>Welcome, <span th:text="${username}"></span>!</h2>
+        <p>You are logged in as: <span th:text="${role}"></span></p>
+    </main>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2025 MedCare. All Rights Reserved.
+    </div>
+</body>
+</html>
